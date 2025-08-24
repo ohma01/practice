@@ -93,6 +93,7 @@ const Form = () => {
                     newErrors.startDate = "";
                     newFormValid.startDate = true;
                 }
+                break;
             }
             case "gender": {
                 if (feildValue === "") {
@@ -200,11 +201,11 @@ const Form = () => {
                     <label className="form-label" htmlFor="gender"> Select Gender :</label>
 
                     <div className="form-check">
-                        <input className="form-check-input" type="radio" name="gender" id="male" checked={formData.gender === "male"} onChange={handleChange} />
+                        <input className="form-check-input" type="radio" name="gender" id="male" value="male" checked={formData.gender === "male"} onChange={handleChange} />
                         <div className="form-check-label" htmlFor="male"> Male</div>
                     </div>
                     <div className="form-check">
-                        <input className="form-check-input" type="radio" name="gender" id="female" checked={formData.gender === "female"} onChange={handleChange} />
+                        <input className="form-check-input" type="radio" name="gender" id="female" value="female" checked={formData.gender === "female"} onChange={handleChange} />
                         <div className="form-check-label" htmlFor="female"> Female</div>
                     </div>
                     <span className="text-danger">{errors.gender}</span>
@@ -249,3 +250,4 @@ const Form = () => {
 
 
 export default Form
+

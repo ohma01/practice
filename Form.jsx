@@ -84,6 +84,9 @@ const Form = () => {
                     newErrors.startDate = "please select a date";
                     newFormValid.startDate = false;
                 } else if (new Date(feildValue) < Date.now()) {
+                    // new Date(feildValue) is a Date object. Date.now() returns a number (timestamp).
+                    // JavaScript will coerce them, but it’s cleaner and safer to compare two timestamps.
+                    // like new Date(feildValue).getTime() < Date.now()
                     newErrors.startDate = "Please select a future date";
                     newFormValid.startDate = false;
                 } else {
@@ -243,5 +246,6 @@ const Form = () => {
         </div>
     )
 }
+
 
 export default Form
